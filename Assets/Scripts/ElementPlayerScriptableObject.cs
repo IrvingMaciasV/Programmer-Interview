@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EquipmentType
+{
+    Head,
+    Torso,
+    Legs
+}
+
 [CreateAssetMenu(fileName = "DataPlayer", menuName = "ScriptableObjects/EquipmentPlayer", order = 1)]
 public class ElementPlayerScriptableObject : ScriptableObject
-{
+{ 
+    public EquipmentType equipmentType;
     public List<Sprite> spritesObj;
 
-    //Stadistics
-    public int velocity;
-    public int life;
+    [Header("Stadistics")]
+    public int speed;
+    public int health;
 }
