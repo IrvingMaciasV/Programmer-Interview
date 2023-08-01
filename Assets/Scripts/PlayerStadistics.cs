@@ -6,15 +6,15 @@ public class PlayerStadistics : MonoBehaviour
 {
     [SerializeField] int originalHealth;
     [SerializeField] int currentHealth;
-    private int healthHead;
-    private int healthTorso;
-    private int healthLegs;
+    public int healthHead;
+    public int healthTorso;
+    public int healthLegs;
 
     [SerializeField] int originalSpeed;
     [SerializeField] int currentSpeed;
-    private int speedHead;
-    private int speedTorso;
-    private int speedLegs;
+    public int speedHead;
+    public int speedTorso;
+    public int speedLegs;
 
     private void Start()
     {
@@ -36,6 +36,7 @@ public class PlayerStadistics : MonoBehaviour
                 healthLegs = newComplementHealth; 
             break;
         }
+        Debug.Log("Sumar");
 
         currentHealth = originalHealth + healthHead + healthLegs + healthTorso;
     }
@@ -45,16 +46,16 @@ public class PlayerStadistics : MonoBehaviour
         switch (equipmentType)
         {
             case EquipmentType.Head:
-                healthHead = newComplementSpeed;
+                speedHead = newComplementSpeed;
                 break;
             case EquipmentType.Torso:
-                healthTorso = newComplementSpeed;
+                speedTorso = newComplementSpeed;
                 break;
             case EquipmentType.Legs:
-                healthLegs = newComplementSpeed;
+                speedTorso = newComplementSpeed;
                 break;
         }
-
-        currentHealth = originalSpeed + speedHead + speedLegs + speedTorso;
+        Debug.Log("Sumar2");
+        currentSpeed = originalSpeed + speedHead + speedLegs + speedTorso;
     }
 }
