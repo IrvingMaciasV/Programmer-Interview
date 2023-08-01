@@ -16,6 +16,12 @@ public class PlayerStadistics : MonoBehaviour
     private int speedTorso;
     private int speedLegs;
 
+    private void Start()
+    {
+        currentHealth = originalHealth;
+        currentSpeed = originalSpeed;
+    }
+
     public void SetNewHealth(EquipmentType equipmentType, int newComplementHealth)
     {
         switch (equipmentType)

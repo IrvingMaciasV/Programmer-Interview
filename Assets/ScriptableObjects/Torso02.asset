@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Torso02
   m_EditorClassIdentifier: 
   equipmentType: 0
-  spritesObj: []
-  speed: 0
-  health: 0
+  spritesObj:
+  - {fileID: 0}
+  speed: 1
+  health: 10

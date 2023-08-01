@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class SetEquipment : MonoBehaviour
 {
-    PlayerStadistics playerStadistics;
-    PlayerVisualEquipment playerEquipment;
+    public PlayerStadistics playerStadistics;
+    public PlayerVisualEquipment playerEquipment;
 
-    public void SetNewEquipment(ElementPlayerScriptableObject equipmentPlayer)
+    [Space(50)]
+    public ElementPlayerScriptableObject equipmentPlayer;
+
+    private void Start()
+    {
+        playerEquipment = GameObject.Find("Player").GetComponent<PlayerVisualEquipment>();
+        playerStadistics = GameObject.Find("Player").GetComponent<PlayerStadistics>();
+    }
+
+    public void SetNewEquipment()
     {
         playerEquipment.SetSpritesEquipment(equipmentPlayer.equipmentType, equipmentPlayer.spritesObj);
         playerStadistics.SetNewHealth(equipmentPlayer.equipmentType, equipmentPlayer.health);
