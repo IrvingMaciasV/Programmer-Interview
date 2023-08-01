@@ -6,15 +6,15 @@ public class PlayerStadistics : MonoBehaviour
 {
     [SerializeField] int originalHealth;
     [SerializeField] int currentHealth;
-    public int healthHead;
-    public int healthTorso;
-    public int healthLegs;
+    private int healthHead;
+    private int healthTorso;
+    private int healthLegs;
 
     [SerializeField] int originalSpeed;
     [SerializeField] int currentSpeed;
-    public int speedHead;
-    public int speedTorso;
-    public int speedLegs;
+    private int speedHead;
+    private int speedTorso;
+    private int speedLegs;
 
     private void Start()
     {
@@ -57,5 +57,15 @@ public class PlayerStadistics : MonoBehaviour
         }
         Debug.Log("Sumar2");
         currentSpeed = originalSpeed + speedHead + speedLegs + speedTorso;
+    }
+
+    public int GetHealth()
+    {
+        return currentHealth;
+    }
+    
+    public int GetSpeed()
+    {
+        return currentSpeed;
     }
 }
