@@ -125,7 +125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3660892929048869418}
         m_TargetAssemblyTypeName: SetEquipment, Assembly-CSharp
-        m_MethodName: SetNewEquipment
+        m_MethodName: ClickBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -147,8 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc85caa7011087488b1b4203e537165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SetItem: 1
   playerStadistics: {fileID: 0}
   playerEquipment: {fileID: 0}
+  playerInventory: {fileID: 0}
   equipmentPlayer: {fileID: 11400000, guid: 8e48441768c505040bdc758bed6949f7, type: 2}
 --- !u!1 &8806283547506416965
 GameObject:

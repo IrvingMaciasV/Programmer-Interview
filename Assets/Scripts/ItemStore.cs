@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class ItemStore : MonoBehaviour
 {
-    public GameObject prefabItem;
-    public GameObject ParentCanvas;
+    private PlayerInventory inventory;
+    public SetEquipment prefabItem;
+
+
+    private void Start()
+    {
+        inventory = GameObject.Find("Player").GetComponent<PlayerInventory>();
+    }
 
     public void BuyItem()
     {
-        GameObject item;
-        item=Instantiate(prefabItem);
-        item.transform.SetParent(ParentCanvas.transform);
-        item.transform.localScale = Vector3.one;
+        inventory.AddItem(prefabItem);
         //Destroy(this.gameObject);
     }
 
     public void SellItem()
     {
-
+        prefabItem.SellItem();
     }
 }

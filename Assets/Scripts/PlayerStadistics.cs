@@ -39,7 +39,6 @@ public class PlayerStadistics : MonoBehaviour
                 healthLegs = newComplementHealth; 
             break;
         }
-        Debug.Log("Sumar");
 
         currentHealth = originalHealth + healthHead + healthLegs + healthTorso;
     }
@@ -58,7 +57,6 @@ public class PlayerStadistics : MonoBehaviour
                 speedTorso = newComplementSpeed;
                 break;
         }
-        Debug.Log("Sumar2");
         currentSpeed = originalSpeed + speedHead + speedLegs + speedTorso;
     }
 

@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public bool canMove=true;
-    public GameObject Pause;
-    public GameObject PlayerGraphics;
+    public GameObject pause;
+    public GameObject parentInventory;
+    public GameObject playerGraphics;
     PlayerStadistics playerStadistics;
+    PlayerInventory inventory;
     Rigidbody2D characterController;
     Animator animator;
     Vector3 move;
@@ -18,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
         playerStadistics = GetComponent<PlayerStadistics>();
         characterController = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        inventory = GetComponent<PlayerInventory>();
     }
 
     private void FixedUpdate()
@@ -29,11 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
             if (move.x > 0)
             {
-                PlayerGraphics.transform.localScale = new Vector3(1,1,1);
+                playerGraphics.transform.localScale = new Vector3(1,1,1);
             }
             else if (move.x < 0)
             {
-                PlayerGraphics.transform.localScale = new Vector3(-1,1,1);
+                playerGraphics.transform.localScale = new Vector3(-1,1,1);
             }
         }
 
@@ -50,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Escape)){
             canMove = false;
-            Pause.SetActive(true);
+            pause.SetActive(true);
         }
     }
 

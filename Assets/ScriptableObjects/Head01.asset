@@ -17,5 +17,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 20eb058aea3c3a744bb5d47a1610550a, type: 3}
   - {fileID: 21300000, guid: 7db7af78e8f9c45418a407bdd7958560, type: 3}
   - {fileID: 0}
+  price: 10
   speed: 1
   health: 100

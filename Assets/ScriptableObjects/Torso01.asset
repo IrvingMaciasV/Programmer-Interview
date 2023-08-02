@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1e6f7ce2f4fbd499b0474caf6022aa, type: 3}
   m_Name: Torso01
   m_EditorClassIdentifier: 
-  equipmentType: 0
+  equipmentType: 1
   spritesObj:
   - {fileID: 21300000, guid: e4c8d3fb89489fc4684fb809362e237c, type: 3}
   - {fileID: 21300000, guid: fa66f03a93fcebb418b876e0f4731600, type: 3}
@@ -21,5 +21,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bbec2f9af2fefd4459cd1f041e6850cf, type: 3}
   - {fileID: 21300000, guid: ab59709aadb3a224294b3c3b5c47cc79, type: 3}
   - {fileID: 21300000, guid: 250530d3e9754ed418009e3d539275b3, type: 3}
+  price: 10
   speed: 0
   health: 0
