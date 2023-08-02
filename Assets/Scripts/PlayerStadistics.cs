@@ -16,6 +16,9 @@ public class PlayerStadistics : MonoBehaviour
     private int speedTorso;
     private int speedLegs;
 
+    [Space(50)]
+    public int money;
+
     private void Start()
     {
         currentHealth = originalHealth;

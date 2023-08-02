@@ -14,6 +14,7 @@ public class ElementPlayerScriptableObject : ScriptableObject
 { 
     public EquipmentType equipmentType;
     public List<Sprite> spritesObj;
+    public int price;
 
     [Header("Stadistics")]
     public int speed;
