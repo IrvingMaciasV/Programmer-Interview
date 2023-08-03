@@ -147,7 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc85caa7011087488b1b4203e537165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SetItem: 0
+  SetItem: 1
+  canInteract: 1
   playerStadistics: {fileID: 0}
   playerEquipment: {fileID: 0}
   playerInventory: {fileID: 0}

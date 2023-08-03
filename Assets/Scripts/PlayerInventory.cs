@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     List<SetEquipment> inventory = new List<SetEquipment>();
-    List<GameObject> inventoryUI = new List<GameObject>();
+    List<SetEquipment> inventoryUI = new List<SetEquipment>();
     PlayerStadistics player;
     public GameObject parent;
 
@@ -17,16 +17,12 @@ public class PlayerInventory : MonoBehaviour
     public void SetItems()
     {
         DestroyElements();
-        int id = 0;
         foreach (SetEquipment item in inventory)
         {
             GameObject i;
             i = Instantiate(item.gameObject);
             i.transform.SetParent(parent.transform);
             i.transform.localScale = Vector3.one;
-            item.SetID(id);
-            id++;
-            inventoryUI.Add(i);
         }
     }
 
@@ -41,53 +37,61 @@ public class PlayerInventory : MonoBehaviour
 
     public void DeleteItem(SetEquipment go)
     {
-        foreach(SetEquipment i in inventory)
-        {
-            if (i == go)
-            {
-                Debug.Log("Find");
-                player.money += i.equipmentPlayer.price;
-                inventory.Remove(i);
-                Destroy(i.gameObject);
-                return;
-            }
-        }
+        player.money += go.equipmentPlayer.price;
+        inventory.Remove(go);
+        Destroy(go.gameObject);
+        return;
     }
 
     public void ShowItemsSet(GameObject parent)
     {
         DestroyElements();
-        foreach(SetEquipment item in inventory)
+        for (int i = 0; i < inventory.Count; i++)
         {
+            SetEquipment item;
+            item = Instantiate(inventory[i]);
             item.SetItem = true;
-            GameObject i;
-            i = Instantiate(item.gameObject);
-            i.transform.SetParent(parent.transform);
-            i.transform.localScale = Vector3.one;
-            inventoryUI.Add(i);
+            item.transform.SetParent(parent.transform);
+            item.transform.localScale = Vector3.one;
+            inventoryUI.Add(item);
         }
     }
     
     public void ShowItemsSell(GameObject parent)
     {
         DestroyElements();
-        foreach(SetEquipment item in inventory)
+        for (int i=0; i<inventory.Count;i++)
         {
+            SetEquipment item;
+            item = Instantiate(inventory[i]);
             item.SetItem = false;
-            GameObject i;
-            i = Instantiate(item.gameObject);
-            i.transform.SetParent(parent.transform);
-            i.transform.localScale = Vector3.one;
-            inventoryUI.Add(i);
+            item.transform.SetParent(parent.transform);
+            item.transform.localScale = Vector3.one;
+            inventoryUI.Add(item);
         }
     }
 
     private void DestroyElements()
     {
-        foreach(GameObject i in inventoryUI)
+        for (int i = 0; i < inventoryUI.Count; i++)
         {
-            Destroy(i);
+            inventory[i].canInteract = inventoryUI[i].canInteract;
+            Destroy(inventoryUI[i].gameObject);
         }
+        inventoryUI = new List<SetEquipment>();
     }
+
+    //public void SetAllInteractable(EquipmentType originalType)
+    //{
+    //    int it = 0;
+    //    foreach(SetEquipment i in inventoryUI)
+    //    {
+    //        i.BoolInteract(true, originalType);
+    //        inventory[it].canInteract = i.canInteract;
+    //        Debug.Log("UI " + i.canInteract + "  Inv " + it + ": " + inventory[it].canInteract);
+    //        it++;
+    //    }
+    //}
+
 
 }

@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetItem: 1
+  canInteract: 1
   playerStadistics: {fileID: 0}
   playerEquipment: {fileID: 0}
   playerInventory: {fileID: 0}
