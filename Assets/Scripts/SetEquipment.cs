@@ -10,6 +10,7 @@ public class SetEquipment : MonoBehaviour
     public PlayerStadistics playerStadistics;
     public PlayerVisualEquipment playerEquipment;
     public PlayerInventory playerInventory;
+    public int it;
 
     [Space(50)]
     public ElementPlayerScriptableObject equipmentPlayer;

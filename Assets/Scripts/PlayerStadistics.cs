@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStadistics : MonoBehaviour
 {
@@ -17,12 +18,14 @@ public class PlayerStadistics : MonoBehaviour
     private int speedLegs;
 
     [Space(50)]
-    public int money;
+    [SerializeField] int money;
+    [SerializeField] Text moneyText;
 
     private void Start()
     {
         currentHealth = originalHealth;
         currentSpeed = originalSpeed;
+        moneyText.text = money.ToString();
     }
 
     public void SetNewHealth(EquipmentType equipmentType, int newComplementHealth)
@@ -68,5 +71,16 @@ public class PlayerStadistics : MonoBehaviour
     public int GetSpeed()
     {
         return currentSpeed;
+    }
+
+    public void ChangeMoney(int newCount)
+    {
+        money += newCount;
+        moneyText.text = money.ToString();
+    }
+    
+    public int GetMoney()
+    {
+        return money;
     }
 }
